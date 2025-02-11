@@ -905,29 +905,33 @@ textarea:not(#select-translations-panel-text-area) {
 		}
 
 		> .tab-close-button {
-			background-color: var(--neptune-button-field-color) !important;
-			fill: ActiveCaption !important;
-			margin: 0 !important;
-			border-radius: 2px !important;
-			visibility: collapse;
-			overflow: hidden;
-
-			#tabbrowser-tabs[closebuttons="activetab"][orient="horizontal"] &:not([selected], [pinned]) {
-				display: revert !important;
-			}
-
-			&:hover {
-				background-color: var(--neptune-button-field-hover-color) !important;
-			}
-
-			&:hover:active {
-				background-color: currentColor !important;
-			}
-
-			tab:hover & {
-				visibility: visible;
-			}
+			display: none;
 		}
+
+		// > .tab-close-button {
+		// 	background-color: var(--neptune-button-field-color) !important;
+		// 	fill: ActiveCaption !important;
+		// 	margin: 0 !important;
+		// 	border-radius: 2px !important;
+		// 	visibility: collapse;
+		// 	overflow: hidden;
+
+		// 	#tabbrowser-tabs[closebuttons="activetab"][orient="horizontal"] &:not([selected], [pinned]) {
+		// 		display: revert !important;
+		// 	}
+
+		// 	&:hover {
+		// 		background-color: var(--neptune-button-field-hover-color) !important;
+		// 	}
+
+		// 	&:hover:active {
+		// 		background-color: currentColor !important;
+		// 	}
+
+		// 	tab:hover & {
+		// 		visibility: visible;
+		// 	}
+		// }
 
 		.tabbrowser-tab[pending] & {
 			color: var(--text-color-disabled);
@@ -1192,9 +1196,11 @@ toolbar .toolbarbutton-1 {
 	}
 
 	&[disabled]:not(#reload-button) {
-		:root:not([customizing]) & {
+		:root:not([customizing]):not([inFullscreen]) & {
 			display: none;
 		}
+		
+		opacity: 0.4 !important;  /* Adjust opacity to make button more faded */
 	}
 }
 
