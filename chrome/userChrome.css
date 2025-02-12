@@ -906,6 +906,14 @@ textarea:not(#select-translations-panel-text-area) {
 
 		> .tab-close-button {
 			display: none;
+			background-color: var(--neptune-button-field-color) !important;
+			fill: ActiveCaption !important;
+			margin: 0 !important;
+			border-radius: 2px !important;
+
+			tab[selected]:not([pinned]):hover & {
+				display: block !important;
+			}
 		}
 
 		// > .tab-close-button {
